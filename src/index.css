@@ -1,6 +1,159 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: red;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "Poppins", sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(107 114 128);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(31 41 55);
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(17 24 39);
+  border-radius: 12px;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* wave animation */
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+  transition: all;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* blink animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+.about_img {
+  background: url("./assets//image_aditi.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  box-shadow: inset 0 0 0 9px rgb(0 0 0 /30%);
+  animation: about_animate 8s ease-in-out infinite 1s; 
+}
+
+@keyframes about_animate{
+    0%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50%{
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100%{
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+.darkShadow{
+  box-shadow: 0 5px 7px 0 rgba(146,175,255,.25);
+}
+
+.violet-border {
+  color: violet;
+  border: 2px solid violet;
+  box-shadow: 0 5px 7px 0 rgba(194, 128, 255, 0.65);
+}
+.indigo-border {
+  color: rgb(88, 208, 255);
+  border: 2px solid rgb(88, 208, 255);
+  box-shadow: 0 5px 7px 0 rgba(108, 218, 255, 0.65);
+}
+.blue-border {
+  color: #4e4edc;
+  border: 2px solid #4e4edc;
+  box-shadow: 0 5px 7px 0 rgba(90, 125, 239, 0.65);
+}
+.green-border {
+  color: rgb(15, 163, 15);
+  border: 2px solid rgb(15, 163, 15);
+  box-shadow: 0 5px 7px 0 rgba(116, 255, 127, 0.65);
+}
+.yellow-border {
+  color: #ffea30;
+  border: 2px solid #ffea30;
+  box-shadow: 0 5px 7px 0 rgba(255, 253, 105, 0.65);
+}
+.orange-border {
+  color: orange;
+  border: 2px solid orange;
+  box-shadow: 0 5px 7px 0 rgba(255, 199, 116, 0.65);
+}
+.red-border {
+  color: rgb(227, 50, 50);
+  border: 2px solid rgb(227, 50, 50);
+  box-shadow: 0 5px 7px 0 rgba(255, 105, 105, 0.65);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
